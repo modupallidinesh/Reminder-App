@@ -1,3 +1,4 @@
+
 Reminder App
 A simple reminder application built using Flutter, designed to help users manage daily activities. The app allows users to select a day of the week, a specific time, and an activity to be reminded of. Once the time is reached, the app plays a sound to alert the user.
 
