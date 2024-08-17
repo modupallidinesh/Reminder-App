@@ -1,0 +1,17 @@
+
+
+DropdownButton<String>(
+  value: selectedDay,
+  items: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+      .map<DropdownMenuItem<String>>((String value) {
+    return DropdownMenuItem<String>(
+      value: value,
+      child: Text(value),
+    );
+  }).toList(),
+  onChanged: (String? newValue) {
+    setState(() {
+      selectedDay = newValue!;
+    });
+  },
+);

@@ -1,0 +1,16 @@
+DropdownButton<String>(
+  value: selectedActivity,
+  items: ['Wake up', 'Go to gym', 'Breakfast', 'Meetings', 'Lunch', 
+          'Quick nap', 'Go to library', 'Dinner', 'Go to sleep']
+      .map<DropdownMenuItem<String>>((String value) {
+    return DropdownMenuItem<String>(
+      value: value,
+      child: Text(value),
+    );
+  }).toList(),
+  onChanged: (String? newValue) {
+    setState(() {
+      selectedActivity = newValue!;
+    });
+  },
+);

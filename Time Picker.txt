@@ -1,0 +1,17 @@
+TimeOfDay selectedTime = TimeOfDay.now();
+
+// Time Picker Widget
+ElevatedButton(
+  onPressed: () async {
+    TimeOfDay? picked = await showTimePicker(
+      context: context,
+      initialTime: selectedTime,
+    );
+    if (picked != null && picked != selectedTime) {
+      setState(() {
+        selectedTime = picked;
+      });
+    }
+  },
+  child: Text("Choose Time: ${selectedTime.format(context)}"),
+);

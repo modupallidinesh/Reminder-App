@@ -1,0 +1,25 @@
+Add dependency to pubspec.yaml
+
+dependencies:
+  flutter_local_notifications: ^x.x.x
+
+Initialize and schedule notifications
+
+void scheduleNotification(TimeOfDay time, String activity) {
+  final androidDetails = AndroidNotificationDetails(
+    'channel_id', 'channel_name',
+    importance: Importance.max,
+  );
+  final notificationDetails = NotificationDetails(android: androidDetails);
+
+  final timeNow = DateTime.now();
+  final scheduleTime = DateTime(timeNow.year, timeNow.month, timeNow.day, time.hour, time.minute);
+  
+  flutterLocalNotificationsPlugin.schedule(
+    0,
+    'Reminder',
+    'It\'s time to $activity',
+    scheduleTime,
+    notificationDetails,
+  );
+}
